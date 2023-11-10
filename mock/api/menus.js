@@ -6,9 +6,18 @@ module.exports = () => {
         label: "导航",
         children: [
           {
+            path: "/medicalVisit",
+            label: "就诊记录",
+          },
+          {
             path: "/dashboard",
             label: "Dashboard",
             icon: "fa fa-gauge",
+          },
+          {
+            path: "/hello",
+            label: "hello",
+            icon: "fa fa-user",
           },
           {
             path: "/dialog/simple",

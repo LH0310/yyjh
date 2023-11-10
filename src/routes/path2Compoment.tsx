@@ -15,6 +15,10 @@ import SchemaApiDemo from "@/pages/admin/schema/index";
 import SchemaApiDemo1 from "@/pages/admin/schema/demo1";
 import Simple2 from "@/pages/admin/dialog/Simple2";
 import Horizontal from "@/pages/admin/horizontal";
+
+import Service from "@/pages/Service";
+import MedicalVisit from "@/pages/MedicalVisit";
+
 const path2components = [
     {
         path: '/',
@@ -87,6 +91,14 @@ const path2components = [
     {
         path: '/horizontal',
         component: Horizontal
+    },
+    {
+        path: '/sevice',
+        component: Service
+    },
+    {
+        path: '/medicalVisit',
+        component: MedicalVisit
     }
 ]
 
