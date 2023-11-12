@@ -5,84 +5,106 @@ const schema = {
   title: "就诊记录",
   body: {
     type: "crud",
-    api: "https://mock.apifox.com/m1/3496157-0-default/medicalVisit",
-    "headerToolbar": [
-        {
-          "label": "新增",
-          "type": "button",
-          "actionType": "dialog",
-          "level": "primary",
-          "dialog": {
-            "title": "新增",
-            "body": {
-              "type": "form",
-              "api": {
-                "method": "post",
-                "url": "https://mock.apifox.com/m1/3496157-0-default/medicalVisit"
+    api: "http://4im9ea.natappfree.cc/admin/medicalVisit/lists",
+    headerToolbar: [
+      {
+        label: "新增",
+        type: "button",
+        actionType: "dialog",
+        level: "primary",
+        dialog: {
+          title: "新增",
+          body: {
+            type: "form",
+            api: {
+              method: "post",
+              url: "http://4im9ea.natappfree.cc/admin/medicalVisit",
+            },
+            body: [
+              {
+                type: "input-datetime",
+                name: "visitTime",
+                label: "就诊时间",
+                required: true,
               },
-              body: [
-                {
-                  type: "input-datetime",
-                  name: "visitTime",
-                  label: "就诊时间",
-                  required: true
-                },
-                {
-                  type: "input-number",
-                  name: "elderlyId",
-                  label: "老人ID",
-                  required: true
-                },
-                {
-                  type: "input-text",
-                  name: "accompanyingPerson",
-                  label: "陪同人员"
-                },
-                {
-                  type: "input-text",
-                  name: "doctorName",
-                  label: "医生姓名"
-                },
-                {
-                  type: "select",
-                  name: "isOutstandingPayment",
-                  label: "是否有未结账款",
-                  options: [
-                    { label: "是", value: "yes" },
-                    { label: "否", value: "no" }
-                  ],
-                  required: true
-                },
-                {
-                  type: "textarea",
-                  name: "diagnosisResult",
-                  label: "诊断结果"
-                },
-                {
-                  type: "select",
-                  name: "visitType",
-                  label: "就诊类型",
-                  options: [
-                    { label: "住院", value: "zhuyuan" },
-                    { label: "门诊", value: "menzhen" }
-                  ],
-                  required: true
-                },
-                {
-                  type: "textarea",
-                  name: "remarks",
-                  label: "备注"
-                }
-              ],
-            }
+              {
+                type: "input-number",
+                name: "elderlyId",
+                label: "老人ID",
+                required: true,
+              },
+              {
+                type: "input-text",
+                name: "accompanyingPerson",
+                label: "陪同人员",
+              },
+              {
+                type: "input-text",
+                name: "doctorName",
+                label: "医生姓名",
+              },
+              {
+                type: "select",
+                name: "isOutstandingPayment",
+                label: "是否有未结账款",
+                options: [
+                  { label: "是", value: 1 },
+                  { label: "否", value: 0 },
+                ],
+                required: true,
+              },
+              {
+                type: "textarea",
+                name: "diagnosisResult",
+                label: "诊断结果",
+              },
+              {
+                type: "select",
+                name: "visitType",
+                label: "就诊类型",
+                options: [
+                  { label: "住院", value: "Inpatient" },
+                  { label: "门诊", value: "Outpatient" },
+                ],
+                required: true,
+              },
+              {
+                type: "textarea",
+                name: "remarks",
+                label: "备注",
+              },
+            ],
           },
-          "id": "u:b5b400a07950"
         },
-        "bulkActions"
+        id: "u:b5b400a07950",
+      },
+      "bulkActions",
+    ],
+    filter: {
+      debug: true,
+      title: "搜索",
+      body: {
+        type: "input-text",
+        name: "elderlyName",
+        label: "老人姓名",
+        clearable: true,
+        size: "sm",
+      },
+      actions: [
+        {
+          type: "reset",
+          label: "重置",
+        },
+        {
+          type: "submit",
+          level: "primary",
+          label: "查询",
+        },
       ],
+    },
     columns: [
       {
-        name: "visit_id",
+        name: "visitId",
         label: "就诊记录ID",
       },
       {
@@ -90,7 +112,7 @@ const schema = {
         label: "老人姓名",
       },
       {
-        name: "visit_time",
+        name: "visitTime",
         label: "就诊时间",
       },
       {
@@ -105,67 +127,73 @@ const schema = {
             dialog: {
               title: "查看详情",
               body: {
-                  initApi: {
-                    method: 'get',
-                    url: 'https://mock.apifox.com/m1/3496157-0-default/medicalVisitDetail',
-                    // 这里假设您的API需要就诊记录的ID来获取详情
-                    data: {
-                      visitId: '${visit_id}'
-                    }
+                initApi: {
+                  method: "get",
+                  url: "http://4im9ea.natappfree.cc/admin/medicalVisit",
+                  // 这里假设您的API需要就诊记录的ID来获取详情
+                  data: {
+                    visitId: "${visitId}",
                   },
+                },
                 type: "form",
                 // 在这里添加 api 属性来获取详细信息
                 body: [
-                    {
-                      type: "static",
-                      name: "accompanying_person",
-                      label: "陪同人员"
-                    },
-                    {
-                      type: "static",
-                      name: "doctor_name",
-                      label: "医生姓名"
-                    },
-                    {
-                      type: "static",
-                      name: "is_outstanding_payment",
-                      label: "是否有未结账款",
-                      // 根据返回的yes或no显示对应的文本
-                      mapping: {
-                        "yes": "有",
-                        "no": "无"
-                      }
-                    },
-                    {
-                      type: "static",
-                      name: "diagnosis_result",
-                      label: "诊断结果"
-                    },
-                    {
-                      type: "static",
-                      name: "visit_type",
-                      label: "就诊类型",
-                      // 假设zhuyuan代表住院，可以根据实际情况添加更多的映射
-                      mapping: {
-                        "zhuyuan": "住院",
-                        "menzhen": "门诊"
-                      }
-                    },
-                    {
-                      type: "static",
-                      name: "remarks",
-                      label: "备注"
-                    }
-                  ],
+                  {
+                    type: "static",
+                    name: "visitId",
+                    label: "就诊记录ID",
+                  },
+                  {
+                    type: "static",
+                    name: "name",
+                    label: "老人姓名",
+                  },
+                  {
+                    type: "static",
+                    name: "visitTime",
+                    label: "就诊时间",
+                  },
+                  {
+                    type: "static",
+                    name: "accompanyingPerson",
+                    label: "陪同人员",
+                  },
+                  {
+                    type: "static",
+                    name: "doctor_name",
+                    label: "医生姓名",
+                  },
+                  {
+                    type: "static",
+                    name: "is_outstandingPayment",
+                    label: "是否有未结账款",
+                  },
+                  {
+                    type: "static",
+                    name: "diagnosisResult",
+                    label: "诊断结果",
+                  },
+                  {
+                    type: "static",
+                    name: "visitType",
+                    label: "就诊类型",
+                  },
+                  {
+                    type: "static",
+                    name: "remarks",
+                    label: "备注",
+                  },
+                ],
               },
             },
           },
           {
             label: "删除",
             type: "button",
-            level: "link",
-            className: "text-danger",
-            disabledOn: "this.grade === 'A'",
+            actionType: "ajax",
+            level: "danger",
+            confirmText: "确认要删除？",
+            api: "delete:http://4im9ea.natappfree.cc/admin/medicalVisit/${visitId}",
           },
         ],
       },
