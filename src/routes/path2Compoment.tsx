@@ -19,6 +19,9 @@ import Horizontal from "@/pages/admin/horizontal";
 import Service from "@/pages/Service";
 import MedicalVisit from "@/pages/MedicalVisit";
 
+import Basic_situation from "@/pages/Basic_situation";
+import Get_situation from "@/pages/Get_situation";
+
 const path2components = [
     {
         path: '/',
@@ -99,6 +102,14 @@ const path2components = [
     {
         path: '/medicalVisit',
         component: MedicalVisit
+    },
+    {
+        path: '/basic_situation',
+        component: Basic_situation
+    },
+    {
+        path: '/get_situation',
+        component: Get_situation
     }
 ]
 
