@@ -10,6 +10,15 @@ module.exports = () => {
             label: "就诊记录",
           },
           {
+            path:"/medical_manage",
+            label:"药物管理"
+
+          },{
+            path:"expenses_manage",
+            label:"费用管理"
+
+          },
+          {
             path: "/dashboard",
             label: "Dashboard",
             icon: "fa fa-gauge",
