@@ -2,7 +2,8 @@ import schema2component from "@/utils/schema2component";
 
 const schema = {
     "type": "page",
-    "title": "hello",
+    "title": "药物管理",
+    "name":"medical_manage",
     "body": {
         "label": "弹框",
         "type": "button",

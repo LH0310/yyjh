@@ -22,6 +22,9 @@ import MedicalVisit from "@/pages/MedicalVisit";
 import Basic_situation from "@/pages/Basic_situation";
 import Get_situation from "@/pages/Get_situation";
 
+import Medical_Manage from "@/pages/Medical_Manage";
+import Expenses_Manage from "@/pages/Expenses_Manage";
+
 const path2components = [
     {
         path: '/',
@@ -110,7 +113,16 @@ const path2components = [
     {
         path: '/get_situation',
         component: Get_situation
-    }
+    },
+    {
+        path: '/medical_manage',
+        component: Medical_Manage
+    },
+    {
+        path: '/expenses_manage',
+        component: Expenses_Manage
+    },
+
 ]
 
 export default path2components;

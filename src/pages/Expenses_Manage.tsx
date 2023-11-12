@@ -2,7 +2,8 @@ import schema2component from "@/utils/schema2component";
 
 const schema = {
     "type": "page",
-    "title": "hello",
+    "title": "费用管理",
+    "name":"expenses_manage",
     "body": {
         "label": "弹框",
         "type": "button",
