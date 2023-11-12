@@ -1,0 +1,28 @@
+{
+  "status": 0,
+  "msg": "ok",
+  "data": {
+    "name": "",
+    "work": "",
+    "gender": "",
+    "id": "",
+    "age": 0,
+    "telephone": 0,
+    "home": "",
+    "phone": "",
+    "nation": "",
+    "marriage": "",
+    "food": "",
+    "career": "",
+    "situation": "",
+    "education": "",
+    "body": "",
+    "hobbies": "",
+    "living": "",
+    "economy": "",
+    "income": 0,
+    "medical": "",
+    "method": "",
+    "textarea": ""
+  }
+}
