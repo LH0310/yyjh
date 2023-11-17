@@ -3,13 +3,15 @@ import schema2component from "@/utils/schema2component";
 const schema = {
     "type": "page",
     "title": "药物管理",
-    "name":"expenses_manage",
+    "name":"medical_manage",
     "toolbar": [
         {
           "type": "button",
           "actionType": "dialog",
           "label": "新增药物",
+          //"flexed":"left",
           "icon": "fa fa-plus pull-left",
+          
           "primary": true,
           "dialog": {
             "title": "新增",
@@ -80,7 +82,7 @@ const schema = {
         "autoFillHeight": true,
         "labelTpl": "${id} ${engine}",
         "autoGenerateFilter": true,
-        "bulkActions": [
+        "bulkActions": [//位于列表顶部之前
           {
             "label": "批量删除",
             "actionType": "ajax",
@@ -114,7 +116,7 @@ const schema = {
         "quickSaveApi": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample/bulkUpdate",
         "quickSaveItemApi": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample/$id",
         "filterTogglable": true,
-        "headerToolbar": [
+        "headerToolbar": [//列表顶部
           "bulkActions",
           {
             "type": "tpl",
@@ -141,76 +143,57 @@ const schema = {
             "align": "right"
           }
         ],
-        "footerToolbar": [
+        "footerToolbar": [//列表底部
           "statistics",
           {
             "type": "pagination",
             "layout": "perPage,pager,go"
           }
         ],
-        "columns": [
+        "columns": [//搜索板块和展示列表的列名
           {
             "name": "id",
             "label": "ID",
             "searchable": {
               "type": "input-text",
-              "name": "id",
-              "label": "主键",
+              "name": "S_MedicalID",
+              "label": "药物id",
               "placeholder": "输入id"
             },
             "fixed": "left"
           },
           {
-            "name": "engine",
-            "label": "Rendering engine",
+            "name": "S_MedicalName",
+            "label": "药物名称",
             "fixed": "left",
             "searchable": true
           },
           {
-            "name": "browser",
-            "label": "Browser",
+            "name": "S_MedicalNumber",
+            "label": "药物数量",
             "width": 500,
             "searchable": {
               "type": "select",
-              "name": "browser",
-              "label": "浏览器",
-              "placeholder": "选择浏览器",
+              "name": "S_MedicalNumber_Option",
+              "label": "数量",
+              "placeholder": "选择数量范围",
               "options": [
                 {
-                  "label": "Internet Explorer ",
-                  "value": "ie"
+                  "label": "数量小于10",
+                  "value": "Low"
                 },
                 {
-                  "label": "AOL browser",
-                  "value": "aol"
+                  "label": "数量10~100",
+                  "value": "Middle"
                 },
                 {
-                  "label": "Firefox",
-                  "value": "firefox"
+                  "label": "数量大于100",
+                  "value": "High"
                 }
               ]
             }
           },
-          {
-            "name": "platform",
-            "label": "Platform(s)",
-            "width": 500
-          },
-          {
-            "name": "version",
-            "label": "Engine version",
-            "searchable": {
-              "type": "input-number",
-              "name": "version",
-              "label": "版本号",
-              "placeholder": "输入版本号",
-              "mode": "horizontal"
-            }
-          },
-          {
-            "name": "grade",
-            "label": "CSS grade"
-          },
+         
           {
             "type": "operation",
             "label": "操作",
