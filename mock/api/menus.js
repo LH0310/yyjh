@@ -14,7 +14,7 @@ module.exports = () => {
             label:"药物管理"
 
           },{
-            path:"expenses_manage",
+            path:"/expenses_manage",
             label:"费用管理"
 
           },

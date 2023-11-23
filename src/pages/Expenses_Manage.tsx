@@ -8,20 +8,29 @@ const schema = {
         {
           "type": "button",
           "actionType": "dialog",
-          "label": "新增",
+          "label": "新增费用",
           "icon": "fa fa-plus pull-left",
           "primary": true,
           "dialog": {
-            "title": "新增",
+            "title": "新增费用",
             "body": {
               "type": "form",
               "name": "sample-edit-form",
-              "api": "post:https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample",
+              "api": {
+                "method":"post",
+                "url":"    ",
+                "data":{
+                  "elderlyID":"${ElderlyID}",
+                  "elderlyName":"${ElderlyName}",
+                  "expenseNmae":"${ExpenseNmae}",
+                  "expenseValue":"${ExpenseValue}",
+                }
+              },
               "body": [
                 {
                   "type": "input-text",
-                  "name": "engine",
-                  "label": "Engine",
+                  "name": "elderlyID",
+                  "label": "老人ID",
                   "required": true
                 },
                 {
@@ -29,8 +38,8 @@ const schema = {
                 },
                 {
                   "type": "input-text",
-                  "name": "browser",
-                  "label": "Browser",
+                  "name": "elderlyname",
+                  "label": "老人姓名",
                   "required": true
                 },
                 {
@@ -38,26 +47,23 @@ const schema = {
                 },
                 {
                   "type": "input-text",
-                  "name": "platform",
-                  "label": "Platform(s)",
+                  "name": "expenseNmae",
+                  "label": "费用名称",
                   "required": true
                 },
                 {
                   "type": "divider"
                 },
                 {
-                  "type": "input-text",
-                  "name": "version",
-                  "label": "Engine version"
+                  "type": "input-number",
+                  "name": "expenseValue",
+                  "label": "费用金额",
+                  "min":"0"
                 },
                 {
                   "type": "divider"
-                },
-                {
-                  "type": "input-text",
-                  "name": "grade",
-                  "label": "CSS grade"
                 }
+               
               ]
             }
           }
@@ -66,7 +72,7 @@ const schema = {
     "body": {
         "type": "crud",
         "draggable": true,
-        "api": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample",
+        "api": "",//api
         "perPage": 50,
         "keepItemSelectionOnPageChange": true,
         "maxKeepItemSelectionLength": 11,
@@ -143,66 +149,37 @@ const schema = {
         ],
         "columns": [
           {
-            "name": "id",
-            "label": "ID",
+            "name": "expenseID",
+            "label": "费用ID",
             "searchable": {
               "type": "input-text",
-              "name": "id",
-              "label": "主键",
-              "placeholder": "输入id"
+              "name": "expenseID",
+              "label": "费用ID",
+              "placeholder": "输入费用ID"
             },
             "fixed": "left"
           },
           {
-            "name": "engine",
-            "label": "Rendering engine",
+            "name": "elderlyName",
+            "label": "老人姓名",
             "fixed": "left",
             "searchable": true
           },
           {
-            "name": "browser",
-            "label": "Browser",
+            "name": "expenseName",
+            "label": "费用名称",
             "width": 500,
-            "searchable": {
-              "type": "select",
-              "name": "browser",
-              "label": "浏览器",
-              "placeholder": "选择浏览器",
-              "options": [
-                {
-                  "label": "Internet Explorer ",
-                  "value": "ie"
-                },
-                {
-                  "label": "AOL browser",
-                  "value": "aol"
-                },
-                {
-                  "label": "Firefox",
-                  "value": "firefox"
-                }
-              ]
-            }
+            "searchable": true
           },
           {
-            "name": "platform",
-            "label": "Platform(s)",
+            "name": "expenseValue",
+            "label": "费用金额",
             "width": 500
           },
+          
           {
-            "name": "version",
-            "label": "Engine version",
-            "searchable": {
-              "type": "input-number",
-              "name": "version",
-              "label": "版本号",
-              "placeholder": "输入版本号",
-              "mode": "horizontal"
-            }
-          },
-          {
-            "name": "grade",
-            "label": "CSS grade"
+            "name": "expenseTime",
+            "label": "费用时间"
           },
           {
             "type": "operation",
