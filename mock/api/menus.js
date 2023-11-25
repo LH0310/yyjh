@@ -37,6 +37,10 @@ module.exports = () => {
                 label: "能力评估记录",
                 path: "/Ability_List",
               },
+              {
+                label: "能力评估表",
+                path: "/Ability_Grade",
+              },
             ],
           },
           {
