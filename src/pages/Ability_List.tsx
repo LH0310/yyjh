@@ -10,7 +10,7 @@ const schema = {
         "wrapWithPanel": false,
         "api": {
             "method": "post",
-            "url": "http://127.0.0.1:4523/m1/3615079-0-default/send"
+            "url": "https://mock.apifox.com/m1/3496157-0-default/admin/into/query2"
         },
         "body": [
             {
@@ -60,7 +60,7 @@ const schema = {
         "name": "sample",
         "api": {
             "method": "get",
-            "url": "http://127.0.0.1:4523/m1/3615079-0-default/query2",
+            "url": "https://mock.apifox.com/m1/3496157-0-default/admin/into/ability",
             "data": {
             }
         },
