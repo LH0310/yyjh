@@ -27,6 +27,7 @@ import Medical_Manage from "@/pages/Medical_Manage";
 import Expenses_Manage from "@/pages/Expenses_Manage";
 import Elder_List from "@/pages/Elder_List";
 import New_Register from "@/pages/New_Register";
+import Ability_List from "@/pages/Ability_List";
 
 
 const path2components = [
@@ -137,6 +138,10 @@ const path2components = [
     {
         path: '/New_Register',
         component: New_Register
+    },
+    {
+        path: '/Ability_List',
+        component: Ability_List
     },
 ]
 
