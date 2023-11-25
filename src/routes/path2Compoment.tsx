@@ -18,13 +18,16 @@ import Horizontal from "@/pages/admin/horizontal";
 
 import Service from "@/pages/Service";
 import MedicalVisit from "@/pages/MedicalVisit";
-
+import Ability_Evaluation from "@/pages/Ability_Evaluation";
 
 //import Basic_situation from "@/pages/Basic_situation";
 //import Get_situation from "@/pages/Get_situation";
 
 import Medical_Manage from "@/pages/Medical_Manage";
 import Expenses_Manage from "@/pages/Expenses_Manage";
+import Elder_List from "@/pages/Elder_List";
+import New_Register from "@/pages/New_Register";
+
 
 const path2components = [
     {
@@ -122,6 +125,18 @@ const path2components = [
     {
         path: '/expenses_manage',
         component: Expenses_Manage
+    },
+    {
+        path: '/Ability_Evaluation',
+        component: Ability_Evaluation
+    },
+    {
+        path: '/Elder_List',
+        component: Elder_List
+    },
+    {
+        path: '/New_Register',
+        component: New_Register
     },
 ]
 
