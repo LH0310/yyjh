@@ -28,6 +28,7 @@ import Expenses_Manage from "@/pages/Expenses_Manage";
 import Elder_List from "@/pages/Elder_List";
 import New_Register from "@/pages/New_Register";
 import Ability_List from "@/pages/Ability_List";
+import Ability_Grade from "@/pages/Ability_Grade";
 
 
 const path2components = [
@@ -142,6 +143,10 @@ const path2components = [
     {
         path: '/Ability_List',
         component: Ability_List
+    },
+    {
+        path: '/Ability_Grade',
+        component: Ability_Grade
     },
 ]
 
