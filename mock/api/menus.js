@@ -33,6 +33,10 @@ module.exports = () => {
                 label: "新增能力评估",
                 path: "/Ability_Evaluation",
               },
+              {
+                label: "能力评估记录",
+                path: "/Ability_List",
+              },
             ],
           },
           {
