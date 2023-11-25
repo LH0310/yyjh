@@ -25,6 +25,7 @@ const schema = {
                 type: "input-datetime",
                 name: "visitTime",
                 label: "就诊时间",
+                format: "YYYY-MM-DD HH:mm:ss",
                 required: true,
               },
               {
