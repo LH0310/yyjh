@@ -16,7 +16,24 @@ module.exports = () => {
           },{
             path:"/expenses_manage",
             label:"费用管理"
-
+          },
+          {
+            path:"/New_Register",
+            label:"新增用户登记"
+          },
+          {
+            path:"/Elder_List",
+            label:"已入住老人列表"
+          },
+          {
+            label: "能力评估",
+            icon: "fa fa-user",
+            children: [
+              {
+                label: "新增能力评估",
+                path: "/Ability_Evaluation",
+              },
+            ],
           },
           {
             path: "/dashboard",
