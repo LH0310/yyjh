@@ -30,6 +30,8 @@ import New_Register from "@/pages/New_Register";
 import Ability_List from "@/pages/Ability_List";
 import Ability_Grade from "@/pages/Ability_Grade";
 
+import Body_Recording from "@/pages/Body_Recording";
+
 
 const path2components = [
     {
@@ -147,6 +149,10 @@ const path2components = [
     {
         path: '/Ability_Grade',
         component: Ability_Grade
+    },
+    {
+        path: '/Body_Recording',
+        component: Body_Recording
     },
 ]
 
