@@ -156,7 +156,7 @@ const schema = {
         "name": "sample",
         "api": {
             "method": "get",
-            "url": "http://pkqxj8.natappfree.cc/admin/into/elderly",
+            "url": "/admin/into/elderly",
             "data": {
             }
         },
