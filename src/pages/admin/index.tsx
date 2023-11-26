@@ -133,7 +133,7 @@ export default class Admin extends React.Component<AdminProps, any> {
           </button>
           <div className={`cxd-Layout-brand`}>
             <i className="fa fa-paw"></i>
-            <span className="hidden-folded m-l-sm">react-amis-admin</span>
+            <span className="hidden-folded m-l-sm">医养结合</span>
           </div>
         </div>
         <div className={`cxd-Layout-headerBar`}>

@@ -5,7 +5,7 @@ const schema = {
   title: "就诊记录",
   body: {
     type: "crud",
-    api: "http://4im9ea.natappfree.cc/admin/medicalVisit/lists",
+    api: "http://pkqxj8.natappfree.cc/admin/medicalVisit/lists",
     headerToolbar: [
       {
         label: "新增",
@@ -18,7 +18,7 @@ const schema = {
             type: "form",
             api: {
               method: "post",
-              url: "http://4im9ea.natappfree.cc/admin/medicalVisit",
+              url: "http://pkqxj8.natappfree.cc/admin/medicalVisit",
             },
             body: [
               {
@@ -130,7 +130,7 @@ const schema = {
               body: {
                 initApi: {
                   method: "get",
-                  url: "http://4im9ea.natappfree.cc/admin/medicalVisit",
+                  url: "http://pkqxj8.natappfree.cc/admin/medicalVisit",
                   // 这里假设您的API需要就诊记录的ID来获取详情
                   data: {
                     visitId: "${visitId}",
@@ -161,12 +161,12 @@ const schema = {
                   },
                   {
                     type: "static",
-                    name: "doctor_name",
+                    name: "doctorName",
                     label: "医生姓名",
                   },
                   {
                     type: "static",
-                    name: "is_outstandingPayment",
+                    name: "isOutstandingPayment",
                     label: "是否有未结账款",
                   },
                   {
@@ -194,7 +194,7 @@ const schema = {
             actionType: "ajax",
             level: "danger",
             confirmText: "确认要删除？",
-            api: "delete:http://4im9ea.natappfree.cc/admin/medicalVisit/${visitId}",
+            api: "delete:http://pkqxj8.natappfree.cc/admin/medicalVisit/${visitId}",
           },
         ],
       },

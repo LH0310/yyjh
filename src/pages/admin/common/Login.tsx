@@ -68,10 +68,7 @@ export default class LoginRoute extends React.Component<LoginProps, any> {
       <div className="login-page-container bg-gray-50">
         <div className="container mt-5">
           <span className="block m-b-xl text-center text-2x">
-            React-Amis-Admin系统
-          </span>
-          <span className="block m-b-xl text-center">
-            一个开箱可用的Amis + React 低代码开发环境
+            医养结合信息管理系统
           </span>
 
           <div className="flex flex-row justify-center ">

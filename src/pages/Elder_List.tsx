@@ -156,54 +156,22 @@ const schema = {
         "name": "sample",
         "api": {
             "method": "get",
-            "url": "https://mock.apifox.com/m1/3496157-0-default/admin/into/elderly",
+            "url": "http://pkqxj8.natappfree.cc/admin/into/elderly",
             "data": {
             }
         },
-        "bulkActions": [
-            {
-                "label": "批量修改",
-                "type": "button",
-                "actionType": "dialog",
-                "level": "primary",
-                "dialog": {
-                    "title": "批量编辑",
-                    "name": "sample-bulk-edit",
-                    "body": {
-                        "type": "form",
-                        "api": "${API_HOST}/api/amis-mock/sample/bulkUpdate2",
-                        "controls": [
-                            {
-                                "type": "text",
-                                "name": "engine",
-                                "label": "Engine"
-                            }
-                        ]
-                    }
-                }
-            },
-            {
-                "label": "批量删除",
-                "type": "button",
-                "level": "danger",
-                "actionType": "ajax",
-                "api": "delete:${API_HOST}/api/amis-mock/sample/$ids",
-                "confirmText": "确定要批量删除?"
-            }
-        ],
         "columns": [
             {
-                "name": "number",
+                "name": "id",
                 "label": "序号",
                 "sortable": true
             },
             {
                 "name": "name",
-                "label": "姓名",
-                "width": 20
+                "label": "姓名"
             },
             {
-                "name": "gender",
+                "name": "sex",
                 "label": "性别",
                 "sortable": true
             },
@@ -216,20 +184,12 @@ const schema = {
                 "label": "手机号码"
             },
             {
-                "name": "cash",
-                "label": "账户余额"
-            },
-            {
                 "name": "location",
                 "label": "居住地址"
             },
             {
-                "name": "register_time",
+                "name": "registerTime",
                 "label": "登记入住时间"
-            },
-            {
-                "name": "vacate_time",
-                "label": "退住时间"
             },
             {
                 "type": "operation",
@@ -239,13 +199,6 @@ const schema = {
                     {
                         "type": "button-group",
                         "buttons": [
-                            {
-                                "type": "button",
-                                "label": "恢复入住",
-                                "level": "primary",
-                                "actionType": "link",
-                                "link": "/crud/${id}"
-                            },
                             {
                                 "type": "button",
                                 "label": "修改",
