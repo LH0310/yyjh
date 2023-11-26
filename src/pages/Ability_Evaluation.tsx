@@ -11,7 +11,7 @@ const schema ={
             "columnCount": 4,
             "api": {
                 "method": "post",
-                "url": "https://mock.apifox.com/m1/3496157-0-default/admin/into/judge"
+                "url": " http://dia6ni.natappfree.cc/admin/into/judge"
             },
             "body": [
                 {
@@ -28,11 +28,11 @@ const schema ={
                     "options": [
                         {
                             "label": "男",
-                            "value": "1"
+                            "value": "男"
                         },
                         {
                             "label": "女",
-                            "value": "0"
+                            "value": "女"
                         }
                     ]
                 },
@@ -56,43 +56,29 @@ const schema ={
                     "options": [
                         {
                             "label": "已婚",
-                            "value": "A"
+                            "value": "已婚"
                         },
                         {
                             "label": "未婚",
-                            "value": "B"
+                            "value": "未婚"
                         },
                         {
                             "label": "离异",
-                            "value": "C"
+                            "value": "离异"
                         }
                     ]
                 },
                 {
                     "type": "input-text",
-                    "name": "religious_belif",
+                    "name": "religiousBelif",
                     "placeholder": "张三",
                     "label": "宗教信仰："
                 },
                 {
                     "name": "education",
-                    "type": "select",
+                    "type": "input-text",
                     "placeholder": "请选择",
                     "label": "文化程度：",
-                    "options": [
-                        {
-                            "label": "A",
-                            "value": "a"
-                        },
-                        {
-                            "label": "B",
-                            "value": "b"
-                        },
-                        {
-                            "label": "C",
-                            "value": "c"
-                        }
-                    ]
                 },
                 {
                     "type": "input-text",
@@ -102,7 +88,7 @@ const schema ={
                 },
                 {
                     "type": "input-text",
-                    "name": "pay_method",
+                    "name": "payMethod",
                     "placeholder": "张三",
                     "label": "医疗支付方式："
                 },
@@ -114,7 +100,7 @@ const schema ={
                 },
                 {
                     "type": "input-text",
-                    "name": "residential_status",
+                    "name": "residentialStatus",
                     "placeholder": "张三",
                     "label": "现居住状况："
                 },
@@ -159,7 +145,7 @@ const schema ={
                 },
                 {
                     "type": "input-text",
-                    "name": "assessment_reason",
+                    "name": "assessmentReason",
                     "placeholder": "张三",
                     "label": "评估原因："
                 },
@@ -171,11 +157,11 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
@@ -187,11 +173,11 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
@@ -209,11 +195,11 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
@@ -225,11 +211,11 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
@@ -241,11 +227,11 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
@@ -257,17 +243,18 @@ const schema ={
                     "options": [
                         {
                             "label": "是",
-                            "value": "1"
+                            "value": "是"
                         },
                         {
                             "label": "否",
-                            "value": "0"
+                            "value": "否"
                         }
                     ]
                 },
                 {
-                    "type": "input-text",
-                    "name": "elder_id",
+                    "type": "input-number",
+                    "name": "elderId",
+                    "showSteps": false,
                     "placeholder": "张三",
                     "label": "老人id："
                 }
