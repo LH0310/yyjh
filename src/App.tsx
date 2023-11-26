@@ -34,7 +34,7 @@ export default function (): JSX.Element {
     {},
     {
       fetcher: ({ url, method, data, config, headers }: any) => {
-        const baseURL = 'http://dia6ni.natappfree.cc';
+        const baseURL = 'http://4vvdup.natappfree.cc';
         const token = localStorage.getItem('token'); // 从 localStorage 获取 token
 
         config = config || {};

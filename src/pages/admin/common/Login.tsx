@@ -30,7 +30,7 @@ export default class LoginRoute extends React.Component<LoginProps, any> {
     axios
       .request({
         method: "post",
-        url: "http://dia6ni.natappfree.cc/admin/user/login",
+        url: "http://4vvdup.natappfree.cc/admin/user/login",
         data: {
           phoneNumber: inputUsername,
           password: inputPassword,
