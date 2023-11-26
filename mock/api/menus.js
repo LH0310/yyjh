@@ -10,6 +10,10 @@ module.exports = () => {
             label: "就诊记录",
           },
           {
+            path: "/Body_Recording",
+            label: "体征记录",
+          },
+          {
             path:"/medical_manage",
             label:"药物管理"
 
