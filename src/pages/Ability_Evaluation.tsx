@@ -11,7 +11,7 @@ const schema ={
             "columnCount": 4,
             "api": {
                 "method": "post",
-                "url": " http://dia6ni.natappfree.cc/admin/into/judge"
+                "url": "/admin/into/judge"
             },
             "body": [
                 {

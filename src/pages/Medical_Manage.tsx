@@ -20,7 +20,7 @@ const schema = {
               "name": "sample-edit-form",
               "api": {
                 "method":"post",
-                "url":"http://dia6ni.natappfree.cc/admin/medication",
+                "url":"/admin/medication",
               },
               "body": [
                 {
@@ -78,7 +78,7 @@ const schema = {
     "body": {
         "type": "crud",
         "draggable": true,
-        "api": "http://dia6ni.natappfree.cc/admin/medication/allLists",
+        "api": "/admin/medication/allLists",
         "perPage": 50,
         "keepItemSelectionOnPageChange": true,
         "maxKeepItemSelectionLength": 11,
