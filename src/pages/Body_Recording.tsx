@@ -119,25 +119,24 @@ const schema = {
             type: "form",
             api: {
               method: "post",
-              url: " ",
+              url: "https://mock.apifox.com/m1/3496157-0-default/admin/care/record",
             },
             body: [
               {
                 type: "input-text",
-                name: "ElderlyName",
+                name: "elderlyName",
                 label: "老人姓名",
-               
               },
               {
                 type: "input-number",
-                name: "ElderlyID",
+                name: "elderlyID",
                 label: "老人ID",
              
                 required: true,
               },
               {
                 type: "input-number",
-                name: "Temperature",
+                name: "bodyTemperature",
                 label: "体温",
                 "step":"0.1",
                 required: true,
@@ -145,7 +144,7 @@ const schema = {
               },
               {
                 type: "input-number",
-                name: "PulseRate",
+                name: "pulseRate",
                 label: "心率（脉搏）",
                 required: true,
 
@@ -153,54 +152,54 @@ const schema = {
               },
               {
                 type: "input-number",
-                name: "RespiratoryRate",
+                name: "respiratoryRate",
                 label: "呼吸频率",
                 required: true,
 
               },
               {
                 type: "input-number",
-                name: "SystolicPressure",
+                name: "systolicPressure",
                 label: "高压",
                 required: true,
 
               },
               {
                 type: "input-number",
-                name: "DiastolicPressure",
+                name: "diastolicPressure",
                 label: "低压",
                 required: true,
 
               },
               {
                 type: "input-number",
-                name: "BloodOxygenSaturation",
+                name: "bloodOxygenSaturation",
                 label: "血氧饱和度",
                 required: true,
               },
               {
                 type: "input-number",
-                name: "BloodSugar",
+                name: "bloodSugar",
                 label: "血糖",
                 required: true,
               },
               {
                 type: "textarea",
-                name: "MedicalObservations",
+                name: "medicalObservations",
                 label: "病情观察处理",
                 required: true,
               },
               
               {
                 type: "textarea",
-                name: "Remarks",
+                name: "remarks",
                 label: "备注",
                 required: true,
 
               },
               {
                 type: "input-text",
-                name: "Signature",
+                name: "signature",
                 label: "测量人签名",
                 required: true,
 
