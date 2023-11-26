@@ -20,37 +20,40 @@ const schema = {
               "name": "sample-edit-form",
               "api": {
                 "method":"post",
-                "url":"    ",
-                "data":{
-                  "AddMedicalID":"${MedicalID}",
-                  "AddMedicalName":"${MedicalName}"
-                }
+                "url":"/admin/medication",
               },
               "body": [
                 {
-                  "type": "input-text",
-                  "name": "MedicalID",
-                  "label": "药物id",
+                  "type": "input-number",
+                  "showSteps": false,
+                  "name": "elderlyId",
+                  "label": "老人id",
                   "required": true
                 },
                 {
-                  "type": "divider"
-                },
-                {
                   "type": "input-text",
-                  "name": "MedicalName",
+                  "name": "medicationName",
                   "label": "药物名称",
                   "required": true
                 },
                 {
-                  "type": "divider"
+                  "type": "input-number",
+                  "name": "frequency",
+                  "label": "每日服用数量",
+                  "required": true
                 },
                 {
                   "type": "input-number",
-                  "name": "MedicalNumber",
-                  "label": "药物数量",
+                  "name": "remain",
+                  "label": "总数量",
                   "required": true
                 },
+                {
+                  "type": "input-text",
+                  "name": "remark",
+                  "label": "备注",
+                  "required": false
+                }
                 // {
                 //   "type": "divider"
                 // },
@@ -75,7 +78,7 @@ const schema = {
     "body": {
         "type": "crud",
         "draggable": true,
-        "api": "https://3xsw4ap8wah59.cfc-execute.bj.baidubce.com/api/amis-mock/sample",
+        "api": "/admin/medication/allLists",
         "perPage": 50,
         "keepItemSelectionOnPageChange": true,
         "maxKeepItemSelectionLength": 11,
@@ -163,37 +166,47 @@ const schema = {
             "fixed": "left"
           },
           {
-            "name": "S_MedicalName",
+            "name": "elderlyId",
+            "label": "老人id",
+            "fixed": "left",
+            "searchable": true
+          },
+          {
+            "name": "elderlyName",
+            "label": "老人姓名",
+            "fixed": "left",
+            "searchable": true
+          },
+          {
+            "name": "medicationName",
             "label": "药物名称",
             "fixed": "left",
             "searchable": true
           },
           {
-            "name": "S_MedicalNumber",
-            "label": "药物数量",
-            "width": 500,
-            "searchable": {
-              "type": "select",
-              "name": "S_MedicalNumber_Option",
-              "label": "数量",
-              "placeholder": "选择数量范围",
-              "options": [
-                {
-                  "label": "数量小于10",
-                  "value": "Low"
-                },
-                {
-                  "label": "数量10~100",
-                  "value": "Middle"
-                },
-                {
-                  "label": "数量大于100",
-                  "value": "High"
-                }
-              ]
-            }
+            "name": "frequency",
+            "label": "服用频率",
+            "fixed": "left",
+            "searchable": true
           },
-         
+          {
+            "name": "remain",
+            "label": "总数量",
+            "fixed": "left",
+            "searchable": true
+          },
+          {
+            "name": "lastTake",
+            "label": "开药时间",
+            "fixed": "left",
+            "searchable": true
+          },
+          {
+            "name": "remark",
+            "label": "备注",
+            "fixed": "left",
+            "searchable": true
+          },
           {
             "type": "operation",
             "label": "操作",

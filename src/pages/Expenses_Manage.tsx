@@ -18,7 +18,7 @@ const schema = {
           name: "sample-edit-form",
           api: {
             method: "post",
-            url: "http://pkqxj8.natappfree.cc/admin/billRecord",
+            url: "/admin/billRecord",
           },
           body: [
             {
@@ -265,7 +265,7 @@ const schema = {
   body: {
     type: "crud",
     draggable: true,
-    api: "http://pkqxj8.natappfree.cc/admin/billRecord/lists", //api
+    api: "/admin/billRecord/lists", //api
     filterTogglable: true,
     headerToolbar: [
       "bulkActions",
@@ -344,7 +344,7 @@ const schema = {
               body: {
                 type: "crud",
                 api: {
-                  url: "http://pkqxj8.natappfree.cc/admin/billRecord",
+                  url: "/admin/billRecord",
                   // 这里假设您的API需要就诊记录的ID来获取详情
                   data: {
                     billId: "${id}",
@@ -398,7 +398,7 @@ const schema = {
             tooltip: "删除",
             confirmText: "您确认要删除?",
             api: {
-              url: "http://pkqxj8.natappfree.cc/admin/billRecord?billId=${id}",
+              url: "/admin/billRecord?billId=${id}",
               method: "delete",
             },
           },

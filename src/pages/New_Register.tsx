@@ -10,7 +10,7 @@ const schema = {
       body: [
         {
           type: "wizard",
-          api: "http://pkqxj8.natappfree.cc/admin/into/register",
+          api: "/admin/into/register",
           steps: [
             {
               title: "第一步",
