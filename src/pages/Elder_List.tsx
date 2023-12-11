@@ -153,6 +153,7 @@ const schema = {
     },
     {
         "type": "crud",
+        "headerToolbar": ["export-excel"],
         "name": "sample",
         "api": {
             "method": "get",

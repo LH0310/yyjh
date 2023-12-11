@@ -7,6 +7,7 @@ import copy from "copy-to-clipboard";
 import RootRoute from "./routes";
 import "./utils/polyfill";
 import { request } from "./utils/requestInterceptor";
+import * as ExcelJS from 'exceljs';
 
 import "moment/dist/locale/zh-cn";
 // css
@@ -17,30 +18,28 @@ import "amis/lib/helper.css";
 import "./scss/style.scss";
 
 export default function (): JSX.Element {
-//   // 添加请求拦截器
-//   axios.interceptors.request.use(
-//     function (config) {
-//       // 在发送请求之前做些什么
-//       // 假设你想要添加一个名为 'myCustomField' 的字段
-//       config.data = { ...config.data, myCustomField: "myValue" };
-//       return config;
-//     },
-//     function (error) {
-//       // 对请求错误做些什么
-//       return Promise.reject(error);
-//     }
-//   );
+  // const baseURL = "https://mock.apifox.com/m1/3496157-0-default";
+  const baseURL = "http://localhost:8080";
+  
+  axios.interceptors.request.use(function (config) {
+    // 设置 baseURL
+    // 如果是登陆请求，需要设置 baseURL
+    if (config.url === "/admin/user/login") {
+      config.url = baseURL + config.url;
+    }
+
+    return config;
+  });
   const store = ((window as any).store = MainStore.create(
     {},
     {
       fetcher: ({ url, method, data, config, headers }: any) => {
-        const baseURL = 'http://4vvdup.natappfree.cc';
-        const token = localStorage.getItem('token'); // 从 localStorage 获取 token
+        const token = localStorage.getItem("token"); // 从 localStorage 获取 token
 
         config = config || {};
         config.headers = {
-            ...config.headers,
-            'adminTokenName': token ? `${token}` : ''
+          ...config.headers,
+          token: token ? `${token}` : "",
         };
         config.withCredentials = true;
 

@@ -8,6 +8,11 @@ const schema = {
     api: "/admin/medicalVisit/lists",
     headerToolbar: [
       {
+        type: "export-excel",
+        label: "只导出 engine 和  browser 列",
+        columns: ["visitId", "name"],
+      },
+      {
         label: "新增",
         type: "button",
         actionType: "dialog",
@@ -16,11 +21,82 @@ const schema = {
           title: "新增",
           body: {
             type: "form",
+            name: "form",
             api: {
               method: "post",
               url: "/admin/medicalVisit",
             },
+            data: {},
             body: [
+              {
+                type: "input-text",
+                label: "老人姓名",
+                id: "name0",
+                name: "name",
+                addOn: {
+                  type: "button",
+                  label: "选择老人",
+                  level: "info",
+                  actionType: "dialog",
+                  dialog: {
+                    title: "选择老人",
+                    size: "lg",
+                    id: "elderlySelectDialog",
+                    actions: [],
+                    body: {
+                      type: "crud",
+                      api: "/admin/baseinfo/page",
+                      checkOnItemClick: true,
+                      columns: [
+                        {
+                          name: "name",
+                          label: "姓名",
+                        },
+                        {
+                          name: "id",
+                          label: "ID",
+                        },
+                        {
+                          name: "phone",
+                          label: "电话",
+                        },
+                      ],
+                      onEvent: {
+                        rowClick: {
+                          close: true,
+                          actions: [
+                            {
+                              actionType: "toast",
+                              args: {
+                                msgType: "info",
+                                msg: "行单击数据：${event.data.item|json}；行索引：${event.data.item.name}",
+                              },
+                            },
+                            {
+                              actionType: "setValue",
+                              args: {
+                                value: "${event.data.item}",
+                              },
+                              componentName: "form",
+                            },
+                            {
+                              actionType: "setValue",
+                              args: {
+                                value: "${event.data.item.id}",
+                              },
+                              componentId: "elderlyId",
+                            },
+                            {
+                              actionType: "cancel",
+                              componentId: "elderlySelectDialog",
+                            },
+                          ],
+                        },
+                      },
+                    },
+                  },
+                },
+              },
               {
                 type: "input-datetime",
                 name: "visitTime",
@@ -29,10 +105,9 @@ const schema = {
                 required: true,
               },
               {
-                type: "input-number",
-                name: "elderlyId",
-                label: "老人ID",
-                required: true,
+                type: "hidden",
+                name: "elderlyId", // 隐藏字段，用于保存老人ID
+                id: "elderlyId",
               },
               {
                 type: "input-text",
@@ -168,6 +243,10 @@ const schema = {
                     type: "static",
                     name: "isOutstandingPayment",
                     label: "是否有未结账款",
+                    map: {
+                      1: "是",
+                      0: "否",
+                    },
                   },
                   {
                     type: "static",
